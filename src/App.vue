@@ -99,7 +99,7 @@
                 class="text-subtitle-1 text-md-h6 text-lg-h5 text-xl-h5 text-xl-h5 font-lato font-weight-bold mt-5"
                 style="font-family: 'Lato', sans-serif !important; color:#B9B9B9 !important"
               >
-                Ask questions, get answers and enable a positive<br>mindset in the journey of HIV/AIDS.
+                Ask questions, get answers and enable a positive mindset in the journey of HIV/AIDS.
               </div>
               <v-btn
                 min-width="200px"
@@ -499,7 +499,7 @@
         <v-container
           fluid
           fill-height
-          py-16
+          pt-16
         >
           <v-row
             align="start"
@@ -565,6 +565,18 @@
                 </v-btn>
               </v-row>
               <v-spacer :style="$vuetify.breakpoint.mobile ? 'height:300px' : ''" />
+            </v-col>
+          </v-row>
+          <v-row
+            align="bottom"
+          >
+            <v-col>
+              <div
+                class="text-caption text-right white--text font-lato mr-2"
+                style="font-family: 'Lato', sans-serif !important; !important"
+              >
+                {{ new Date().getFullYear() }} — <strong>MENCONNECT</strong>
+              </div>
             </v-col>
           </v-row>
         </v-container>
@@ -756,7 +768,7 @@ import VueScrollSnap from "vue-scroll-snap";
     background-repeat: no-repeat;
     .container{
       &.side-img {
-        background: url('~@/assets/sideImg.svg') 100% center no-repeat;
+        background: url('~@/assets/sideImg.png') 100% center no-repeat;
         background-size: contain;
       }
     }
@@ -765,14 +777,14 @@ import VueScrollSnap from "vue-scroll-snap";
     min-height: 100%;
   }
   #three {
-    background-image: url('~@/assets/vidPlacheloder.png');
+    background-image: url('~@/assets/vidPlacheloder.jpg');
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
   }
   #five {
     .container{
-      background: url('~@/assets/phoneDude2.svg') 0 100% no-repeat;
+      background: url('~@/assets/footerImg.png') 0 100% no-repeat;
     }
     &.mobile-height {
       .container{
