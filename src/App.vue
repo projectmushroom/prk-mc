@@ -136,6 +136,7 @@
         <v-container
           fluid
           py-16
+          fill-height
         >
           <v-row
             align="start"
@@ -154,8 +155,9 @@
             </v-col>
           </v-row>
           <v-row
+            align="center"
             justify="center"
-            class="ma-6"
+            class="my-6"
           >
             <v-col :cols="$vuetify.breakpoint.smAndDown ? 12 : 6">
               <v-row
@@ -309,7 +311,7 @@
           </v-row>
 
           <v-row
-            align="center"
+            align="end"
             justify="center"
           >
             <v-btn
@@ -384,7 +386,7 @@
           py-16
         >
           <v-row
-            align="center"
+            align="start"
             justify="center"
           >
             <v-col
@@ -396,6 +398,15 @@
               >
                 Frequently asked questions:
               </div>
+            </v-col>
+          </v-row>
+          <v-row
+            align="center"
+            justify="center"
+          >
+            <v-col
+              md="6"
+            >
               <v-expansion-panels :value="0">
                 <v-expansion-panel>
                   <v-expansion-panel-header
@@ -473,22 +484,22 @@
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
-              <v-row
-                align="end"
-                justify="center"
-              >
-                <v-btn
-                  min-width="200px"
-                  x-large
-                  rounded
-                  color="accent"
-                  class="black--text text-h6  mt-10"
-                  @click="dialog = true"
-                >
-                  Ask your first question
-                </v-btn>
-              </v-row>
             </v-col>
+          </v-row>
+          <v-row
+            align="end"
+            justify="center"
+          >
+            <v-btn
+              min-width="200px"
+              x-large
+              rounded
+              color="accent"
+              class="black--text text-h6  mt-10"
+              @click="dialog = true"
+            >
+              Ask your first question
+            </v-btn>
           </v-row>
         </v-container>
       </div>
@@ -500,6 +511,7 @@
           fluid
           fill-height
           pt-16
+          pb-0
         >
           <v-row
             align="start"
@@ -572,7 +584,7 @@
           >
             <v-col>
               <div
-                class="text-caption text-right white--text font-lato mr-2"
+                class="text-caption text-right white--text font-lato mr-2 mt-16"
                 style="font-family: 'Lato', sans-serif !important; !important"
               >
                 {{ new Date().getFullYear() }} — <strong>MENCONNECT</strong>
