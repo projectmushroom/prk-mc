@@ -595,7 +595,7 @@
       </div>
       <v-dialog
         v-model="dialog"
-        max-width="400px"
+        max-width="430px"
       >
         <v-expand-transition>
           <v-card
@@ -604,7 +604,7 @@
             dark
           >
             <v-card-title
-              class="text-h5 text-md-h3 text-lg-h3 text-xl-h3 font-lato accent--text font-weight-bold mb-3"
+              class="text-h5 text-md-h3 text-lg-h3 text-xl-h3 font-lato accent--text font-weight-bold mb-3 text-no-break"
               style="font-family: 'Dosis', sans-serif !important;"
             >
               What is your cellphone number?
@@ -838,6 +838,9 @@ import VueScrollSnap from "vue-scroll-snap";
     &-header--active {
       color: #FDE900 !important;;
     }
+  }
+  .text-no-break {
+    word-break: normal !important;
   }
   .theme--light.v-expansion-panels .v-expansion-panel-header .v-expansion-panel-header__icon .v-icon {
       color: white !important;
