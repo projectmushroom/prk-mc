@@ -256,7 +256,7 @@
               </v-row>
               <v-row
                 justify="center"
-                class="mx-4"
+                :class="$vuetify.breakpoint.mdAndDown ? 'mx-4' : 'mx-4 px-4'"
               >
                 <v-col
                   :cols="$vuetify.breakpoint.smAndDown ? 12 : 6"
@@ -273,12 +273,51 @@
                       class="mb-2"
                     >
                       <v-icon color="white">
-                        mdi-share-variant
+                        mdi-lock
                       </v-icon>
                     </v-btn><br>
-                    Connect you to other services to live a strong and healthy life
+                    Chat privately about your status
                   </div>
                 </v-col>
+                <v-col
+                  :cols="$vuetify.breakpoint.smAndDown ? 12 : 6"
+                >
+                  <div
+                    class="text-h6 font-lato  text-center white--text font-weight-bold"
+                    style="font-family: 'Lato', sans-serif !important;"
+                  >
+                    <v-btn
+                      elevation="0"
+                      fab
+                      x-large 
+                      color="primary"
+                      class="mb-2"
+                    >
+                      <v-icon color="white">
+                        mdi-heart
+                      </v-icon>
+                    </v-btn><br>
+                    Feel supported and inspired to lead a healthy life
+                  </div>
+                </v-col>
+                <v-row
+                  justify="center"
+                  class="mx-4"
+                >
+                  <v-col
+                    :cols="12"
+                  >
+                    <div
+                      class="text-h6 font-lato  text-center white--text font-weight-bold"
+                      style="font-family: 'Lato', sans-serif !important;"
+                    >
+                      <br>
+                      Your status does not define you. Taking treatment means that you can stay healthy and live a long life. It's the most important step you can take.
+                      <br>
+                      Join the 1.4 million men in South Africa who are taking treatment
+                    </div>
+                  </v-col>
+                </v-row>
               </v-row>
             </v-col>
             <v-col
@@ -319,7 +358,7 @@
               rounded
               x-large
               color="accent"
-              class="black--text text-h6 text-capitalize my-6"
+              class="black--text text-h6 text-capitalize mx-6"
               @click="dialog = true"
             >
               Meet MO
@@ -483,6 +522,35 @@
                     Your information is protected. It is kept confidential and strict privacy and security guidelines are followed.
                   </v-expansion-panel-content>
                 </v-expansion-panel>
+                <v-expansion-panel>
+                  <v-expansion-panel-header
+                    class="text-h6 font-lato text-uppercase font-weight-bold"
+                    style="font-family: 'Lato', sans-serif !important;"
+                  >
+                    What is MINA?
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content
+                    class="text-h6 font-lato white--text font-weight-bold"
+                    style="font-family: 'Lato', sans-serif !important;"
+                  >
+                    MINA. For Men. For Health. A community to help South African men lead healthy lives. <br><br>Whether you have been diagnosed with HIV or not, MINA is there to support you with your health.
+                    <br><br>
+                    Check out their Facebook page for more info: 
+                    <v-btn
+                      min-width="200px"
+                      large
+                      rounded
+                      color="accent"
+                      class="black--text text-h6  mt-10"
+                      href="https://www.facebook.com/MINASouthAfrica"
+                    >
+                      <v-icon class="mr-2">
+                        mdi-facebook
+                      </v-icon>
+                      MINA South Africa
+                    </v-btn>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
               </v-expansion-panels>
             </v-col>
           </v-row>
@@ -512,6 +580,7 @@
           fill-height
           pt-16
           pb-0
+          mb-0
         >
           <v-row
             align="start"
@@ -558,7 +627,7 @@
                     For SMS messages, <br>dial <span class="accent--text font-weight-bold">*134*406#</span><br>
                     Or<br>
                     For WhatsApp messages, 
-                    <br>Send <span class="accent--text font-weight-bold">“Hi”</span> to <span class="accent--text font-weight-bold">060 063 6001</span><br>
+                    <br>Send <span class="accent--text font-weight-bold text-capitalize">“Strong”</span> to <span class="accent--text font-weight-bold">060 063 6001</span><br>
                   </div>
                 </v-col>
               </v-row>
@@ -579,23 +648,13 @@
               <v-spacer :style="$vuetify.breakpoint.mobile ? 'height:300px' : ''" />
             </v-col>
           </v-row>
-          <v-row
-            align="bottom"
-          >
-            <v-col>
-              <div
-                class="text-caption text-right white--text font-lato mr-2 mt-16"
-                style="font-family: 'Lato', sans-serif !important; !important"
-              >
-                {{ new Date().getFullYear() }} — <strong>MENCONNECT</strong>
-              </div>
-            </v-col>
-          </v-row>
         </v-container>
       </div>
       <v-dialog
         v-model="dialog"
         max-width="430px"
+        overlay-opacity="0.8"
+        overlay-color="black"
       >
         <v-expand-transition>
           <v-card
@@ -668,6 +727,43 @@
           </v-card>
         </v-expand-transition>
       </v-dialog>
+    
+      <v-footer
+        dark
+        padless
+        dense
+        width="100%"
+      >
+        <v-card
+          class="flex"
+          flat
+          tile
+        >
+          <v-card-title class="white">
+            <v-spacer />
+            <v-spacer />
+            <div>
+              <p class="text-subtitle-1 black--text">
+                Endorsed by
+              </p>
+              <a href="http://www.health.gov.za">
+                <v-img
+                  class="DOH"
+                  position="center center"
+                  src="@/assets/doh.jpg"
+                  width="220px"
+                /></a>
+            </div>
+          </v-card-title>
+
+          <v-card-text
+            class="py-2 white--text text-right primary"
+            style="font-family: 'Lato', sans-serif !important; !important"
+          >
+            {{ new Date().getFullYear() }} — <strong>MENCONNECT</strong>
+          </v-card-text>
+        </v-card>
+      </v-footer>
     </vue-scroll-snap>
   </v-app>
 </template>
@@ -675,7 +771,7 @@
 <script>
 import VueScrollSnap from "vue-scroll-snap";
   export default {
-    components: {VueScrollSnap},
+    components: { VueScrollSnap },
     data () {
       return {
         slide: 0,
@@ -803,6 +899,9 @@ import VueScrollSnap from "vue-scroll-snap";
         background-size: 70%;
       }
     }
+  }
+  .item {
+    scroll-snap-align: none !important;
   }
   .scroll-snap-container {
     z-index: 0;
