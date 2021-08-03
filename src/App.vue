@@ -658,7 +658,7 @@
       >
         <v-expand-transition>
           <v-card
-            v-if="!submit"
+            v-if="!submitted"
             color="#132C3B"
             dark
           >
@@ -690,7 +690,7 @@
               <v-btn
                 color="accent"
                 text
-                @click="submit = true"
+                @click="submitted = true"
               >
                 Submit
               </v-btn>
@@ -803,10 +803,11 @@ import VueScrollSnap from "vue-scroll-snap";
         },
         videoLink: 'https://www.youtube.com/embed/8x9dZYwvXpE?controls=0&showinfo=0&rel=0&autoplay=0&loop=1&mute=0',
         dialog: false,
-        submit: false,
+        submitted: false,
         video: false,
         phone: '',
         collapseOnScroll: true,
+        apiURL: process.env.API_URL || 'http://localhost:9000/api'
       }
     },
     computed: {
@@ -822,6 +823,21 @@ import VueScrollSnap from "vue-scroll-snap";
       this.onResize()
     },
     methods: {
+      submit () {
+        if (this.phone) {
+          this.$http.post(
+          { 
+            method: 'post',
+            url: '/number',
+            baseURL: this.apiURL,
+            params: {
+              number: this.number,
+            },
+          }).then((response) => {
+            console.log(response.data)
+          })
+        }
+      },
       onResize () {
         this.windowSize = { x: window.innerWidth, y: window.innerHeight }
       },
